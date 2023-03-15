@@ -1,0 +1,81 @@
+// 根元素大小使用 vw 单位
+//@media (min-width: 1024px){
+//  html{font-size: 18px}
+//} /*>=1024的设备*/
+//
+//@media (min-width: 1100px) {
+//  html{font-size: 20px}
+//} /*>=1100的设备*/
+//
+//@media (min-width: 1280px) {
+//  html{font-size: 30px;}
+//} /*>=1280的设备*/
+//
+//@media (min-width: 1366px) {
+//  html{font-size: 24px;}
+//}
+//
+//@media (min-width: 1440px) {
+//  html{font-size: 25px;}
+//}
+//
+//@media (min-width: 1680px) {
+//  html{font-size: 28px;}
+//}
+//
+//@media (min-width: 1920px) {
+//  html{font-size: 33px;}
+//}
+
+// 公共属性
+
+// 公共颜色
+@BASE_COLOR: #527474;
+// 阴影
+@BASE_SHADOW: 2px 2px 6px #BFBFBF;
+// ui图的宽
+@BASE_VW: 1366vw;
+// ui图的高
+@BASE_VH: 657vh;
+@BASE_REM: 75;
+.pxrem(@name,@px) {
+    @{name}: unit((@px / @BASE_REM), rem);
+}
+
+// 可视单位的换算
+
+// 宽
+.vw(@vw) {
+  width: @vw/@BASE_VW * 100;
+}
+
+// 高
+.vh(@vh) {
+  height: @vh/@BASE_VH * 100;
+}
+
+// 字体的大小
+.font-size(@size) {
+  font-size: @size/@BASE_VW * 100;
+}
+
+// 行高
+.line-height(@line) {
+  line-height: @line/@BASE_VH * 100;
+}
+
+// padding
+.padding(@top,@right,@bottom,@left) {
+  padding-top: @top / @BASE_VH * 100;
+  padding-right: @right / @BASE_VW * 100;
+  padding-bottom: @bottom / @BASE_VH * 100;
+  padding-left: @left / @BASE_VW * 100;
+}
+
+// margin
+.margin(@top,@right,@bottom,@left) {
+  margin-top: @top / @BASE_VH * 100;
+  margin-right: @right / @BASE_VW * 100;
+  margin-bottom: @bottom / @BASE_VH * 100;
+  margin-left: @left / @BASE_VW * 100;
+}
